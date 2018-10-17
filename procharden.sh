@@ -159,38 +159,38 @@ test_arch () {
 
 # firstly, ensure running user is root
 if !(root_privs); then
-    printf "\n\033[33mError: You are running 'procharden.sh' as an unprivileged user.\n"
+    echo -e "\n\033[33mError: You are running 'procharden.sh' as an unprivileged user.\n"
     exit 1
 fi
 
 # secondly, check requisites
 if !(command_exists readelf); then
-    printf "\033[31mWarning: 'readelf' not found! It's required for most checks.\033[m\n\n"
+    echo -e "\033[31mWarning: 'readelf' not found! It's required for most checks.\033[m\n\n"
     have_readelf=-1
 fi
 
 if !(command_exists cut); then
-    printf "\033[31mWarning: 'cut' not found! It's required for most checks.\033[m\n\n"
+    echo -e "\033[31mWarning: 'cut' not found! It's required for most checks.\033[m\n\n"
     have_cut=-1
 fi
 
 if !(command_exists awk); then
-    printf "\033[31mWarning: 'awk' not found! It's required for most checks.\033[m\n\n"
+    echo -e "\033[31mWarning: 'awk' not found! It's required for most checks.\033[m\n\n"
     have_awk=-1
 fi
 
 if !(command_exists sed); then
-    printf "\033[31mWarning: 'sed' not found! It's required for most checks.\033[m\n\n"
+    echo -e "\033[31mWarning: 'sed' not found! It's required for most checks.\033[m\n\n"
     have_sed=-1
 fi
 
 if !(command_exists wc); then
-    printf "\033[31mWarning: 'wc' not found! It's required for most checks.\033[m\n\n"
+    echo -e "\033[31mWarning: 'wc' not found! It's required for most checks.\033[m\n\n"
     have_wc=-1
 fi
 
 if !(command_exists file); then
-    printf "\033[31mWarning: 'file' not found! It's required for most checks.\033[m\n\n"
+    echo -e "\033[31mWarning: 'file' not found! It's required for most checks.\033[m\n\n"
     have_file=-1
 fi
 
