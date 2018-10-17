@@ -40,12 +40,12 @@ if !(command_exists bash); then
 
     compiled_bash="${arch}-arch/bash"
     if [[ ! -f "$compiled_bash" ]]; then
-        printf "\033[31mError: Cross compiled bash binary not found.\033[m\n\n"
+        echo -e "\033[31mError: Cross compiled bash binary not found.\033[m\n\n"
     fi
     # install cross compiled bash into system $PATH environment
     cp "$compiled_bash" /bin/bash
 
     if !(command_exists bash); then
-        printf "\033[31mError: Cross compiled bash binary not correct.\033[m\n\n"
+        echo -e "\033[31mError: Cross compiled bash binary not correct.\033[m\n\n"
     fi
 fi
