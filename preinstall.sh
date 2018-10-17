@@ -33,9 +33,9 @@ test_arch () {
 # check if bash interpreter exists
 if !(command_exists bash); then
     if !(command_exists file); then
-        arch=$(get_arch)
-    else
         arch=$(test_arch)
+    else
+        arch=$(get_arch)
     fi
 
     compiled_bash="${arch}-arch/bash"
