@@ -214,13 +214,13 @@ elif [[ $arch == "mipsel" ]]; then
 elif [[ $arch == "armel" ]]; then
     export PATH=$PATH:"$(pwd)/armel-arch"
 else
-    printf "\033[31mError: Host CPU architecture not understood.\033[m\n\n"
+    echo -e "\033[31mError: Host CPU architecture not understood.\033[m\n\n"
     exit 1
 fi
 
 # counting process on host
 if [[ $(ps_count) -le 2 ]]; then
-    printf "\033[31mError: process numbers is too small, 'ps' command is invalid.\033[m\n\n"
+    echo -e "\033[31mError: process numbers is too small, 'ps' command is invalid.\033[m\n\n"
     exit 1
 fi
 
@@ -239,8 +239,8 @@ do
         # execute security audit for those process's binary 
         #checksec --file $path
         # execute security audit for those process's binary and loaded libraries
-        printf "\033[34mPerform GCC Hardened options audit for process of 'pid=$pid'\033[m\n\n"
-        printf "\33[34m/*******************************************************************************************************************************************/\033[m\n\n"
+        echo -e "\033[34mPerform GCC Hardened options audit for process of 'pid=$pid'\033[m\n\n"
+        echo -e "\33[34m/*******************************************************************************************************************************************/\033[m\n\n"
         # Note that shell interpreter must be 'bash' rather 'sh', or error occurs
         bash checksec --proc-libs $pid 
     fi
