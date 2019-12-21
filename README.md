@@ -2,6 +2,8 @@
 
 chekcharden is to identify hardened security optoins for Linux-based devices during their runtime, putting chekcharden to the running system firstly before use it, then run preinstall.sh and procharden.sh in sequence.
 
+chekcharden turns out to be a aweone practice in IoT security auditing.
+
 ## Dependencies
 
 - [checksec](!http://www.trapkit.de/tools/checksec.html)
